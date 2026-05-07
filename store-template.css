@@ -363,7 +363,7 @@ h3 {
 
 .contact-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.58fr) auto;
   align-items: center;
   gap: 24px;
   margin: 0 clamp(18px, 5vw, 62px) 70px;
@@ -380,6 +380,32 @@ h3 {
 .contact-panel p:not(.mini-label) {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.74);
+}
+
+.contact-info {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-info div {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.contact-info span,
+.contact-info strong {
+  display: block;
+}
+
+.contact-info span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+}
+
+.contact-info strong {
+  overflow-wrap: anywhere;
 }
 
 .contact-actions {

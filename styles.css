@@ -418,6 +418,48 @@ h1 {
   font-weight: 700;
 }
 
+.contact-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f7f2ed;
+}
+
+.contact-strip div {
+  min-width: 0;
+}
+
+.contact-strip span,
+.contact-strip strong {
+  display: block;
+}
+
+.contact-strip span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-strip strong {
+  overflow-wrap: anywhere;
+}
+
+.contact-strip a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--rose);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -511,5 +553,13 @@ h1 {
   .footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .contact-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-strip a {
+    width: 100%;
   }
 }
