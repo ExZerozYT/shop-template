@@ -11,15 +11,15 @@
 
 ## วิธีแก้ลิงก์ LINE
 
-ค้นหา `line://ti/p/~exzerozyt` แล้วเปลี่ยน `exzerozyt` เป็น LINE ID ของร้าน
+ค้นหา `https://line.me/ti/p/~exzerozyt` แล้วเปลี่ยน `exzerozyt` เป็น LINE ID ของร้าน
 
 ตัวอย่าง:
 
 ```html
-<a href="line://ti/p/~LINE_ID">ทัก LINE</a>
+<a href="https://line.me/ti/p/~LINE_ID">ทัก LINE</a>
 ```
 
-ถ้าต้องการลิงก์สำรองแบบเปิดผ่านเว็บ ให้ใช้ `https://line.me/ti/p/~LINE_ID`
+ลิงก์แบบ `line://...` เปิดแอปตรงกว่า แต่บางเครื่องอาจเปิด LINE แล้วเด้งออก จึงแนะนำให้ใช้ `https://line.me/...` สำหรับเว็บที่เปิดผ่าน GitHub Pages
 
 ## วิธีเปิดบน GitHub Pages
 
