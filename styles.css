@@ -103,7 +103,7 @@ a {
   position: relative;
   display: grid;
   min-height: calc(100vh - 66px);
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+  grid-template-columns: minmax(0, 1fr);
   align-items: end;
   gap: 28px;
   padding: clamp(72px, 10vw, 128px) clamp(18px, 5vw, 64px) 42px;
@@ -162,38 +162,6 @@ h1 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
-}
-
-.hero-preview {
-  display: grid;
-  gap: 12px;
-  padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
-  backdrop-filter: blur(14px);
-}
-
-.hero-preview div {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.metric {
-  font-size: 28px;
-  font-weight: 800;
-}
-
-.label {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 13px;
-  text-align: right;
 }
 
 .section {
@@ -460,6 +428,169 @@ h1 {
   white-space: nowrap;
 }
 
+.map-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(24px, 4vw, 46px);
+  padding: 86px clamp(18px, 5vw, 64px);
+  background:
+    linear-gradient(135deg, rgba(14, 143, 127, 0.1), rgba(184, 74, 98, 0.08)),
+    #fffaf5;
+  overflow: hidden;
+}
+
+.map-section::before {
+  position: absolute;
+  top: 36px;
+  right: clamp(18px, 5vw, 64px);
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(14, 143, 127, 0.16);
+  border-radius: 50%;
+  content: "";
+}
+
+.map-copy {
+  position: relative;
+  align-self: center;
+  z-index: 1;
+}
+
+.map-copy h2 {
+  margin-bottom: 14px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.12;
+}
+
+.map-copy p {
+  color: var(--muted);
+}
+
+.location-list {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 18px;
+}
+
+.location-item {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 32px rgba(55, 36, 24, 0.06);
+}
+
+.location-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--mint);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.location-item span:not(.location-icon),
+.location-item strong {
+  display: block;
+}
+
+.location-item span:not(.location-icon) {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.location-item strong {
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+
+.map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--mint);
+  font-weight: 800;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--rose-dark);
+  font-weight: 800;
+}
+
+.map-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.map-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 4px 14px;
+}
+
+.map-card-head span,
+.map-card-head strong {
+  display: block;
+}
+
+.map-card-head span,
+.map-card-head small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.map-card-head strong {
+  font-size: 20px;
+}
+
+.map-card-head small {
+  text-align: right;
+}
+
+.map-frame {
+  min-height: 390px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f7f2ed;
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  border: 0;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -480,18 +611,13 @@ h1 {
 }
 
 @media (max-width: 980px) {
-  .hero {
-    grid-template-columns: 1fr;
-    align-items: end;
-  }
-
-  .hero-preview {
-    max-width: 520px;
-  }
-
   .feature-grid,
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .map-section {
+    grid-template-columns: 1fr;
   }
 }
 
